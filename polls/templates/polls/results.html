@@ -1,11 +1,32 @@
+{% extends "polls/base.html" %}
 
+{% block title %} Home {% endblock %}
+
+{% block content %}
 
 <h1>{{ question.question_text }}</h1>
 
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-</ul>
+<table class="table table-bordered col-sm-2">
+  <thead>
+    <tr>
+      <th>Options</th>
+      <th>Votes</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for choice in question.choice_set.all %}
+    <tr>
+      <td>{{ choice.choice_text }} </td>
+      <td>{{ choice.votes }} vote{{ choice.votes|pluralize }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+<div>
+  <h5>Vote Again?</h5>
+  <a class="btn btn-primary" href="{% url 'polls:detail' question.id %}">Yes</a>
+  <a class="btn btn-primary" href="{% url 'polls:index'  %}">No</a>
+</div>
+
+{% endblock %}

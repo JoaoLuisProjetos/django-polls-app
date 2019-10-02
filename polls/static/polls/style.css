@@ -1,0 +1,24 @@
+.page-header {
+  background-color: #4256b4;
+  margin-top: 0;
+  padding: 20px 20px 20px 40px;
+}
+
+.page-header h1 a {
+  color: #ffffff;
+  font-size: 36pt;
+  text-decoration: none;
+}
+
+.page-header .btn-primary {
+  float: right;
+}
+
+.card-deck {
+  margin-top: 0;
+  padding: 20px 20px 20px 20px;
+}
+
+.card {
+  max-width: 300px;
+}
