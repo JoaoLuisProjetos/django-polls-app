@@ -9,9 +9,9 @@
     {% for question in latest_question_list %}
         <div class="card" width="300">
           {% if question.question_image %}
-            <a href="{% url 'polls:detail' question.id %}"><img src="../../media/{{ question.question_image }}" class="img-fluid" alt="description" height="200" width="300" ></a>
+            <a href="{% url 'polls:detail' question.id %}"><img src="../../media/{{ question.question_image }}" class="card-img-top" alt="description" height="200" width="300" ></a>
           {% else %}
-            <a href="{% url 'polls:detail' question.id %}"><img src="../media/images/Magic_the_gathering-card_back-1_0.jpg" class="img-fluid" alt="description" height="200" width="300" ></a>
+            <a href="{% url 'polls:detail' question.id %}"><img src="../media/images/Magic_the_gathering-card_back-1_0.jpg" class="card-img-top" alt="description" height="200" width="300" ></a>
           {% endif %}
           <div class="card-body">
             <h4 class="card-title">{{ question.question_text }}</h4>
